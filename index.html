@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groviglio - Il Gioco dei Vincoli</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Grandstander:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .bg-pattern {
+        background-color: #f8fafc;
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      }
+    </style>
+  </head>
+  <body class="bg-pattern text-slate-800">
+    <header class="header-nav bg-white shadow-sm">
+      <div class="nav-container px-4 py-3">
+        <a
+          href="https://milo-studio.github.io/groviglio/"
+          class="flex items-center"
+        >
+          <img
+            src="assets/logo.png"
+            alt="Groviglio Logo"
+            class="w-10 h-10 rounded-xl"
+          />
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#supporto"
+            class="font-bold text-slate-600 hover:text-indigo-600 transition"
+            >Supporto</a
+          >
+          <a
+            href="privacy.html"
+            class="font-bold text-slate-600 hover:text-indigo-600 transition"
+            >Privacy</a
+          >
+          <select
+            onchange="location = this.value"
+            class="bg-slate-100 border-none rounded-lg px-2 py-2 font-bold text-sm focus:ring-2 focus:ring-indigo-500"
+          >
+            <option value="index.html" selected>🇮🇹 IT</option>
+            <option value="index-en.html">🇬🇧 EN</option>
+          </select>
+        </div>
+
+        <button id="menu-btn" class="md:hidden text-indigo-600 p-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-slate-100 p-6 flex flex-col gap-4 shadow-xl"
+      >
+        <a
+          href="#supporto"
+          class="font-bold text-lg text-slate-700"
+          onclick="toggleMenu()"
+          >Supporto</a
+        >
+        <a href="privacy.html" class="font-bold text-lg text-slate-700"
+          >Privacy</a
+        >
+        <div class="flex items-center gap-3 pt-2 border-t border-slate-50">
+          <span class="text-sm font-bold text-slate-400">Lingua:</span>
+          <select
+            onchange="location = this.value"
+            class="bg-slate-100 rounded-lg px-3 py-2 font-bold w-full"
+          >
+            <option value="index.html" selected>Italiano</option>
+            <option value="index-en.html">English</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="max-w-6xl mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12"
+    >
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+          Riuscirai a non <span class="text-indigo-600">annodarti?</span>
+        </h1>
+        <p class="text-lg text-slate-600 mb-4">
+          Il party game definitivo dove la tua agilità è messa alla prova.
+        </p>
+
+        <div
+          class="mb-8 p-3 bg-emerald-50 border-l-4 border-emerald-400 inline-block rounded-r-lg"
+        >
+          <p class="text-sm font-bold text-emerald-800">
+            🤖 Disponibile ora per Android <br class="md:hidden" />
+            <span class="font-normal opacity-75">| 🍎 Presto su iOS</span>
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+        >
+          <a
+            href="#"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl font-bold text-xl shadow-xl transition-all active:scale-95"
+          >
+            Scarica l'App
+          </a>
+        </div>
+      </div>
+
+      <div class="flex-1 relative">
+        <div class="carousel-container drop-shadow-2xl z-10">
+          <div class="carousel-track" id="track">
+            <img src="assets/screen1.png" alt="Screenshot 1" />
+            <img src="assets/screen2.png" alt="Screenshot 2" />
+            <img src="assets/screen3.png" alt="Screenshot 3" />
+            <img src="assets/screen4.png" alt="Screenshot 4" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="bg-white py-16 border-y border-slate-100">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl font-black text-center mb-16 uppercase tracking-widest"
+        >
+          Perché giocarci?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-12">
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl"
+            >
+              🧩
+            </div>
+            <h3 class="text-xl font-bold mb-2">Vincoli Infiniti</h3>
+            <p class="text-slate-500">
+              Centinaia di sfide che metteranno a dura prova il tuo equilibrio.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl"
+            >
+              👥
+            </div>
+            <h3 class="text-xl font-bold mb-2">Fino a 16 Giocatori</h3>
+            <p class="text-slate-500">
+              Crea il tuo avatar, aggiungi gli amici e dai inizio al delirio.
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl"
+            >
+              🔥
+            </div>
+            <h3 class="text-xl font-bold mb-2">Tre Difficoltà</h3>
+            <p class="text-slate-500">
+              Dalle sfide relax a quelle "Extreme" per i veri contorsionisti.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="supporto" class="max-w-4xl mx-auto px-6 py-14">
+      <div
+        class="bg-indigo-50 rounded-3xl p-8 md:p-12 border-2 border-indigo-100"
+      >
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-black mb-4">
+            Ehi, qualcosa si è annodato? 🪢
+          </h2>
+          <p class="text-slate-600 leading-relaxed">
+            Groviglio è una mia creazione fatta con tanta passione ma... sono
+            ancora alle prime armi! Se trovi un bug o qualcosa non va,
+            <strong
+              >scrivimi qui sotto prima di lasciare una recensione
+              negativa</strong
+            >. Mi aiuterai a far crescere l'app e ti risponderò appena
+            possibile!
+          </p>
+        </div>
+
+        <form
+          action="mailto:groviglio.app@gmail.com"
+          method="post"
+          enctype="text/plain"
+          class="flex flex-col gap-4"
+        >
+          <input
+            type="text"
+            name="Oggetto"
+            placeholder="Che succede? (es. Bug, Suggerimento)"
+            required
+            class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none"
+          />
+          <textarea
+            name="Messaggio"
+            rows="4"
+            placeholder="Raccontami tutto..."
+            required
+            class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none"
+          ></textarea>
+          <button
+            type="submit"
+            class="bg-indigo-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-indigo-700 transition-transform active:scale-95"
+          >
+            Invia Segnalazione 🚀
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="p-12 text-center text-slate-400 bg-white">
+      <div class="mb-4 flex justify-center gap-6 font-bold text-sm">
+        <a href="privacy.html" class="hover:text-indigo-600">Privacy Policy</a>
+      </div>
+      <p class="text-xs">
+        &copy; 2026 Nicola Milo. Creato con passione a Salerno.
+      </p>
+    </footer>
+    <script>
+      const track = document.getElementById("track");
+      let index = 0;
+      setInterval(() => {
+        index = (index + 1) % 4;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }, 3000);
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      function toggleMenu() {
+        mobileMenu.classList.toggle("hidden");
+      }
+
+      menuBtn.addEventListener("click", toggleMenu);
+    </script>
+  </body>
+</html>
