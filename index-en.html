@@ -134,30 +134,39 @@
         </p>
 
         <div
-          class="mb-8 p-3 bg-emerald-50 border-l-4 border-emerald-400 inline-block rounded-r-lg text-left"
+          class="mb-8 flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start"
         >
-          <p class="text-sm font-bold text-emerald-800">
-            🤖 Available now for Android <br class="md:hidden" />
-            <span class="font-normal opacity-75"
-              >| 🍎 iOS version coming soon</span
-            >
-          </p>
-        </div>
-
-        <div
-          class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-        >
-          <a
-            href="#"
-            class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-2xl font-bold text-xl shadow-xl transition-all active:scale-95"
-          >
-            Download App
+          <!-- Google Play -->
+          <a href="#" aria-label="Scarica su Google Play">
+            <img
+              src="https://play.google.com/intl/en_us/badges/static/images/badges/it_badge_web_generic.png"
+              alt="Available on Google Play"
+              class="h-14 w-auto"
+            />
           </a>
+
+          <!-- App Store — "Presto disponibile" overlay -->
+          <div class="relative h-11 w-fit">
+            <img
+              src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+              alt="Coming soon to the App Store"
+              class="h-11 w-auto opacity-50 block"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span
+                class="bg-black/60 text-white text-xs font-bold px-2 py-1 rounded-lg whitespace-nowrap"
+              >
+                Coming soon
+              </span>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="flex-1 relative">
-        <div class="carousel-container drop-shadow-2xl z-10">
+        <div
+          class="carousel-container drop-shadow-2xl z-10 rounded-2xl overflow-hidden"
+        >
           <div class="carousel-track" id="track">
             <img src="assets/screen1.png" alt="Screenshot 1" />
             <img src="assets/screen2.png" alt="Screenshot 2" />
@@ -173,14 +182,27 @@
         <h2
           class="text-3xl font-black text-center mb-16 uppercase tracking-widest"
         >
-          Perché giocarci?
+          Why play it?
         </h2>
         <div class="grid md:grid-cols-3 gap-12">
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl"
+              class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
             >
-              🧩
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                />
+              </svg>
             </div>
             <h3 class="text-xl font-bold mb-2">Vincoli Infiniti</h3>
             <p class="text-slate-500">
@@ -189,24 +211,51 @@
           </div>
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl"
+              class="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
             >
-              👥
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold mb-2">Fino a 16 Giocatori</h3>
+            <h3 class="text-xl font-bold mb-2">Up to 12 Players</h3>
             <p class="text-slate-500">
-              Crea il tuo avatar, aggiungi gli amici e dai inizio al delirio.
+              Create your avatar, add your friends, and let the chaos begin.
             </p>
           </div>
           <div class="text-center">
             <div
-              class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-3xl"
+              class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6"
             >
-              🔥
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-8 h-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold mb-2">Tre Difficoltà</h3>
+            <h3 class="text-xl font-bold mb-2">Different Difficulties</h3>
             <p class="text-slate-500">
-              Dalle sfide relax a quelle "Extreme" per i veri contorsionisti.
+              From chill challenges to "Extreme" mode for true contortionists
+              only.
             </p>
           </div>
         </div>
@@ -219,7 +268,7 @@
       >
         <div class="text-center mb-10">
           <h2 class="text-3xl font-black mb-4">
-            Hey, did something get tangled? 🪢
+            Hey, did something get tangled?
           </h2>
           <p class="text-slate-600 leading-relaxed">
             Groviglio is a young and constantly evolving project. If you find a
@@ -241,7 +290,14 @@
           <input
             type="text"
             name="Subject"
-            placeholder="What's happening? (e.g. Bug, Suggestion)"
+            placeholder="What's up? (e.g. Bug, Suggestion)"
+            required
+            class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none"
+          />
+          <input
+            type="email"
+            name="Email"
+            placeholder="Your email"
             required
             class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none"
           />
@@ -252,11 +308,44 @@
             required
             class="w-full p-4 rounded-xl border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-indigo-500 outline-none"
           ></textarea>
+
+          <!-- Updates consent checkbox -->
+          <label class="flex items-start gap-3 cursor-pointer group">
+            <input
+              type="checkbox"
+              name="Updates consent"
+              value="YES"
+              class="mt-1 w-4 h-4 accent-indigo-600 cursor-pointer flex-shrink-0"
+            />
+            <span
+              class="text-sm text-slate-500 group-hover:text-slate-700 transition"
+            >
+              I agree to receive updates about new features in the Groviglio
+              app. You can withdraw your consent at any time by writing to
+
+              <a
+                href="mailto:groviglio.app@gmail.com"
+                class="underline hover:text-indigo-500"
+                >groviglio.app@gmail.com</a
+              >.
+            </span>
+          </label>
+
+          <!-- Privacy note -->
+          <p class="text-xs text-slate-400 -mt-1">
+            🔒 Your email will be used <strong>only</strong> to reply to your
+            message and, if you gave your consent, to send you app updates. See
+            our
+            <a href="privacy-en.html" class="underline hover:text-indigo-500"
+              >Privacy Policy</a
+            >.
+          </p>
+
           <button
             type="submit"
-            class="bg-indigo-600 text-white font-black py-4 rounded-xl shadow-lg hover:bg-indigo-700 transition-transform active:scale-95"
+            class="bg-indigo-600 text-white font-bold py-4 rounded-xl shadow-lg hover:bg-indigo-700 transition-transform active:scale-95"
           >
-            Send Report 🚀
+            Send 🚀
           </button>
         </form>
       </div>
